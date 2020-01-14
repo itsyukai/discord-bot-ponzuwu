@@ -2,7 +2,7 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const prefix = "uwu ";
+const prefix = "uu ";
 require("dotenv").config();
 
 client.commands = new Discord.Collection();
