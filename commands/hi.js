@@ -4,6 +4,6 @@ module.exports = {
   description: "Hello!",
   args: false,
   execute(message, args) {
-    message.channel.send(`Hewwoo, ${message.author}`);
+    message.channel.send(`Hello, ${message.author}`);
   }
 };
