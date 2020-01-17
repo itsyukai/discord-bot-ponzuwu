@@ -19,7 +19,7 @@ module.exports = {
         return;
       }
 
-      var msg = "`";
+      var msg = `\`${message.author.username} rolled: `;
       for (i = 0; i < tempArgs[0]; i++) {
         var roll = Math.floor(Math.random() * tempArgs[1] + 1);
 
@@ -30,6 +30,12 @@ module.exports = {
         }
       }
       msg += "`";
+      var msg2 = "";
+      for (var arg in args) {
+        msg2 += args[arg] + " ";
+      }
+      msg2.slice(0, -1);
+      message.channel.send(`> ${msg2}`);
 
       message.channel.send(msg);
       // message.channel.send("dev: " + msg);
