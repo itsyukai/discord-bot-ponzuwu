@@ -84,7 +84,7 @@ module.exports = {
               `[Armor Description]\n${res.armor_desc}\n` +
               `[Hit Points]\n${res.hit_points}\n` +
               `[Hit Dice]\n${res.hit_dice}\n` +
-              `= States / Save =\n` +
+              `= Ability Scores / Saves =\n` +
               `[Strength]\n${res.strength} / ${res.strength_save}\n` +
               `[Dexterity]\n${res.dexterity} / ${res.dexterity_save}\n` +
               `[Constitution]\n${res.constitution} / ${res.constitution_save}\n` +
