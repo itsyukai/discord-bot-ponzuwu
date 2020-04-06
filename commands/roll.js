@@ -19,6 +19,15 @@ module.exports = {
         return;
       }
 
+      if (tempArgs[0] > 40) {
+        if (tempArgs[0] > 120) {
+          message.channel.send("YO. CHILL.");
+          return;
+        } else {
+          message.channel.send("Someone's about to take a lot of damage...");
+        }
+      }
+
       var msg = `\`${message.author.username} rolled: `;
       for (i = 0; i < tempArgs[0]; i++) {
         var roll = Math.floor(Math.random() * tempArgs[1] + 1);
@@ -40,5 +49,5 @@ module.exports = {
       message.channel.send(msg);
       // message.channel.send("dev: " + msg);
     }
-  }
+  },
 };
