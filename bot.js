@@ -2,7 +2,7 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const prefix = "uu ";
+const prefix = "ma ";
 require("dotenv").config();
 
 client.commands = new Discord.Collection();
@@ -10,7 +10,7 @@ client.commands = new Discord.Collection();
 // dynamically retrieves commands from commands folder
 const commandFiles = fs
   .readdirSync("./commands")
-  .filter(file => file.endsWith(".js"));
+  .filter((file) => file.endsWith(".js"));
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
@@ -24,7 +24,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("message", message => {
+client.on("message", (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).split(/ +/);
@@ -33,7 +33,7 @@ client.on("message", message => {
   const command =
     client.commands.get(commandName) ||
     client.commands.find(
-      cmd => cmd.aliases && cmd.aliases.includes(commandName)
+      (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
     );
 
   if (!command) return;
